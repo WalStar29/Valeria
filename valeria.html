@@ -1,0 +1,275 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>¡Feliz Cumpleaños 18!</title>
+
+    <!-- Manifest para PWA -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Ícono para navegadores y pantalla de inicio -->
+    <link rel="icon" type="image/png" sizes="192x192" href="Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg" />
+    <link rel="apple-touch-icon" href="Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg" />
+
+    <!-- Colores para Android y iOS -->
+    <meta name="theme-color" content="#d63384" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>¡Feliz Cumpleaños 18!</title>
+    <style>
+        :root {
+        --rosa: #ffe0ec;
+        --lavanda: #f9f0ff;
+        --morado: #6a0dad;
+        --texto: #333;
+        }
+
+        html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, var(--rosa), var(--lavanda));
+        color: var(--texto);
+        min-height: 100vh;
+        overflow-x: hidden;
+        }
+
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 2rem 1rem;
+        }
+
+        .container {
+        text-align: center;
+        padding: 2rem;
+        background: white;
+        color: var(--texto);
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        max-width: 600px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        }
+
+        h1 {
+        font-size: 2rem;
+        color: #d63384;
+        }
+
+        .subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--morado);
+        }
+
+        button {
+        background-color: #d63384;
+        color: white;
+        border: none;
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+        }
+
+        button:hover {
+        background-color: var(--morado);
+        }
+
+        #surprise {
+        margin-top: 2rem;
+        animation: slideFade 0.8s ease-out;
+        }
+
+        .hidden {
+        display: none;
+        }
+
+        .quote-box {
+        background: #f8e1ff;
+        border-left: 4px solid var(--morado);
+        padding: 1rem;
+        margin: 1rem 0;
+        font-style: italic;
+        color: #6a0dad;
+        text-align: left;
+        border-radius: 8px;
+        }
+
+        .carousel {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        .carousel img {
+        position: absolute;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        }
+
+        .carousel img.active {
+        opacity: 1;
+        }
+
+        @keyframes slideFade {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+
+        canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 0;
+        }
+
+        @media (max-width: 600px) {
+        .carousel {
+            height: 200px;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+        }
+        }
+    </style>
+    </head>
+    <body>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="container">
+        <h1>🎂 ¡Feliz Cumpleaños, Valeria!</h1>
+        <p class="subtitle">Hoy celebramos tus 18 años con alegría y estilo ✨</p>
+        <button id="btnSurprise">Ver Sorpresa</button>
+        <div id="surprise" class="hidden">
+        <p>🎈 ¡Bienvenida a la adultez! Que tus sueños se multipliquen y tus pasos brillen.</p>
+        <div class="quote-box">
+            <p><strong>RECUERDA:</strong> el avión despega en contra del viento, no a su favor.<br>
+            Usa cada desafío como un impulso para volar más alto.<br>
+            <strong>¡El mundo te espera, Valeria!</strong></p>
+        </div>
+        <div class="carousel" id="carousel">
+            <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg" class="active" alt="Globos dorados" />
+            <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_ddf05f22.jpg" alt="Cartel azul y dorado" />
+            <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_eb0868b1.jpg" alt="Decoración negra y plateada" />
+            <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.20_17f233a7.jpg" alt="Fondo colorido" />
+            <img src="/Imagen de WhatsApp 2025-08-03 a las 14.10.20_ab890648.jpg" alt="Fondo colorido" />
+            <img src="/Imagen de WhatsApp 2025-08-03 a las 14.10.20_d0d53e66.jpg" alt="Fondo colorido" />
+            <img src="/Imagen de WhatsApp 2025-08-03 a las 14.10.20_d4470167.jpg" alt="Fondo colorido" />
+        </div>
+        </div>
+        <audio id="bgMusic" src="musica.mp3" preload="auto" autoplay loop></audio>
+
+    </div>
+
+    <script>
+    const btn = document.getElementById('btnSurprise');
+    const surprise = document.getElementById('surprise');
+    const music = document.getElementById('bgMusic');
+    const images = document.querySelectorAll('#carousel img');
+    let current = 0;
+    let interval;
+    let confettiRunning = false;
+
+    btn.addEventListener('click', () => {
+        surprise.classList.toggle('hidden');
+        if (!surprise.classList.contains('hidden')) {
+        music.currentTime = 30; // comienza desde el segundo 30
+        music.volume = 1.0;
+        music.play();
+        startCarousel();
+        } else {
+        music.pause();
+        music.currentTime = 0;
+        clearInterval(interval);
+        }
+    });
+
+    function startCarousel() {
+        interval = setInterval(() => {
+        images[current].classList.remove('active');
+        current = (current + 1) % images.length;
+        images[current].classList.add('active');
+        }, 3000);
+    }
+
+    function launchConfetti() {
+        const canvas = document.getElementById('confettiCanvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const confetti = Array.from({ length: 100 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 8 + 4,
+        speed: Math.random() * 3 + 2,
+        color: `hsl(${Math.random() * 360}, 70%, 70%)`,
+        angle: Math.random() * 360
+        }));
+
+        function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confetti.forEach(p => {
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.angle * Math.PI / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+        });
+        update();
+        }
+
+        function update() {
+        confetti.forEach(p => {
+            p.y += p.speed;
+            p.angle += 5;
+            if (p.y > canvas.height) {
+            p.y = -10;
+            p.x = Math.random() * canvas.width;
+            }
+        });
+        }
+
+        function animate() {
+        draw();
+        requestAnimationFrame(animate);
+        }
+
+        if (!confettiRunning) {
+        confettiRunning = true;
+        animate();
+        }
+    }
+
+  launchConfetti(); // inicia al cargar la página
+</script>
+</body>
+</html>
