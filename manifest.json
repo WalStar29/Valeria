@@ -7,12 +7,12 @@
     "theme_color": "#d63384",
     "icons": [
         {
-        "src": "Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg",
+        "src": "icon-192.png",
         "sizes": "192x192",
         "type": "image/png"
         },
         {
-        "src": "Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg",
+        "src": "icon-192.png",
         "sizes": "512x512",
         "type": "image/png"
         }

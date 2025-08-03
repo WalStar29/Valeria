@@ -175,7 +175,7 @@
             <strong>¡El mundo te espera, Valeria!</strong></p>
         </div>
         <div class="carousel" id="carousel">
-            <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg" class="active" alt="Globos dorados" />
+            <img src="icon-192.png" class="active" alt="Globos dorados" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_ddf05f22.jpg" alt="Cartel azul y dorado" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_eb0868b1.jpg" alt="Decoración negra y plateada" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.20_17f233a7.jpg" alt="Fondo colorido" />
@@ -267,6 +267,13 @@
         confettiRunning = true;
         animate();
         }
+
+        
+    }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('Service Worker registrado'))
+        .catch(err => console.error('Error al registrar SW:', err));
     }
 
   launchConfetti(); // inicia al cargar la página
