@@ -1,22 +1,17 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>¡Feliz Cumpleaños 18!</title>
 
-    <!-- Manifest para PWA -->
     <link rel="manifest" href="manifest.json" />
-
-    <!-- Ícono para navegadores y pantalla de inicio -->
     <link rel="icon" type="image/png" sizes="192x192" href="Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg" />
     <link rel="apple-touch-icon" href="Imagen de WhatsApp 2025-08-03 a las 14.10.19_9c874393.jpg" />
-
-    <!-- Colores para Android y iOS -->
     <meta name="theme-color" content="#d63384" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <title>¡Feliz Cumpleaños 18!</title>
+
     <style>
         :root {
         --rosa: #ffe0ec;
@@ -24,7 +19,6 @@
         --morado: #6a0dad;
         --texto: #333;
         }
-
         html, body {
         margin: 0;
         padding: 0;
@@ -34,14 +28,12 @@
         min-height: 100vh;
         overflow-x: hidden;
         }
-
         body {
         display: flex;
         justify-content: center;
         align-items: start;
         padding: 2rem 1rem;
         }
-
         .container {
         text-align: center;
         padding: 2rem;
@@ -54,18 +46,15 @@
         position: relative;
         z-index: 1;
         }
-
         h1 {
         font-size: 2rem;
         color: #d63384;
         }
-
         .subtitle {
         font-size: 1.2rem;
         margin-bottom: 1.5rem;
         color: var(--morado);
         }
-
         button {
         background-color: #d63384;
         color: white;
@@ -75,21 +64,18 @@
         cursor: pointer;
         font-size: 1rem;
         transition: background 0.3s ease;
+        margin: 0.5rem;
         }
-
         button:hover {
         background-color: var(--morado);
         }
-
         #surprise {
         margin-top: 2rem;
         animation: slideFade 0.8s ease-out;
         }
-
         .hidden {
         display: none;
         }
-
         .quote-box {
         background: #f8e1ff;
         border-left: 4px solid var(--morado);
@@ -100,7 +86,6 @@
         text-align: left;
         border-radius: 8px;
         }
-
         .carousel {
         position: relative;
         width: 100%;
@@ -113,7 +98,6 @@
         align-items: center;
         justify-content: center;
         }
-
         .carousel img {
         position: absolute;
         max-width: 100%;
@@ -122,22 +106,13 @@
         opacity: 0;
         transition: opacity 1s ease-in-out;
         }
-
         .carousel img.active {
         opacity: 1;
         }
-
         @keyframes slideFade {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
         }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        }
-
         canvas {
         position: fixed;
         top: 0;
@@ -145,36 +120,31 @@
         pointer-events: none;
         z-index: 0;
         }
-
         @media (max-width: 600px) {
-        .carousel {
-            height: 200px;
-        }
-
-        h1 {
-            font-size: 1.6rem;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-        }
+        .carousel { height: 200px; }
+        h1 { font-size: 1.6rem; }
+        .subtitle { font-size: 1rem; }
         }
     </style>
-    </head>
+</head>
     <body>
-    <canvas id="confettiCanvas"></canvas>
-    <div class="container">
+        <canvas id="confettiCanvas"></canvas>
+        <div class="container">
         <h1>🎂 ¡Feliz Cumpleaños, Valeria!</h1>
         <p class="subtitle">Hoy celebramos tus 18 años con alegría y estilo ✨</p>
+
+        <div id="mantraBox" class="quote-box"></div>
         <button id="btnSurprise">Ver Sorpresa</button>
+        <button onclick="mostrarMensajeHora()">¿Cómo me siento hoy?</button>
+
         <div id="surprise" class="hidden">
-        <p>🎈 ¡Bienvenida a la adultez! Que tus sueños se multipliquen y tus pasos brillen.</p>
-        <div class="quote-box">
+            <p>🎈 ¡Bienvenida a la adultez! Que tus sueños se multipliquen, tus pasos brillen y tu corazón nunca olvide lo valiente que eres. Este nuevo capítulo está lleno de posibilidades, aprendizajes y momentos que te harán crecer. ¡Confía en ti, porque el mundo necesita tu luz! 🌟</p>
+            <div class="quote-box">
             <p><strong>RECUERDA:</strong> el avión despega en contra del viento, no a su favor.<br>
             Usa cada desafío como un impulso para volar más alto.<br>
             <strong>¡El mundo te espera, Valeria!</strong></p>
-        </div>
-        <div class="carousel" id="carousel">
+            </div>
+            <div class="carousel" id="carousel">
             <img src="icon-192.jpg" class="active" alt="Globos dorados" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_ddf05f22.jpg" alt="Cartel azul y dorado" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.19_eb0868b1.jpg" alt="Decoración negra y plateada" />
@@ -182,101 +152,175 @@
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.20_ab890648.jpg" alt="Fondo colorido" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.20_d0d53e66.jpg" alt="Fondo colorido" />
             <img src="Imagen de WhatsApp 2025-08-03 a las 14.10.20_d4470167.jpg" alt="Fondo colorido" />
+            </div>
+            <div class="quote-box" id="contadorDias"></div>
         </div>
-        </div>
+
         <audio id="bgMusic" src="musica.mp3" preload="auto" autoplay loop></audio>
+        </div>
 
-    </div>
+        <script>
+        const btn = document.getElementById('btnSurprise');
+        const surprise = document.getElementById('surprise');
+        const music = document.getElementById('bgMusic');
+        const images = document.querySelectorAll('#carousel img');
+        const contadorDias = document.getElementById("contadorDias");
+        const mantraBox = document.getElementById("mantraBox");
 
-    <script>
-    const btn = document.getElementById('btnSurprise');
-    const surprise = document.getElementById('surprise');
-    const music = document.getElementById('bgMusic');
-    const images = document.querySelectorAll('#carousel img');
-    let current = 0;
-    let interval;
-    let confettiRunning = false;
+        let current = 0;
+        let interval;
+        let confettiRunning = false;
 
-    btn.addEventListener('click', () => {
-        surprise.classList.toggle('hidden');
-        if (!surprise.classList.contains('hidden')) {
-        music.currentTime = 30; // comienza desde el segundo 30
-        music.volume = 1.0;
-        music.play();
-        startCarousel();
-        } else {
-        music.pause();
-        music.currentTime = 0;
-        clearInterval(interval);
-        }
-    });
-
-    function startCarousel() {
-        interval = setInterval(() => {
-        images[current].classList.remove('active');
-        current = (current + 1) % images.length;
-        images[current].classList.add('active');
-        }, 3000);
-    }
-
-    function launchConfetti() {
-        const canvas = document.getElementById('confettiCanvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const confetti = Array.from({ length: 100 }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 8 + 4,
-        speed: Math.random() * 3 + 2,
-        color: `hsl(${Math.random() * 360}, 70%, 70%)`,
-        angle: Math.random() * 360
-        }));
-
-        function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        confetti.forEach(p => {
-            ctx.save();
-            ctx.translate(p.x, p.y);
-            ctx.rotate(p.angle * Math.PI / 180);
-            ctx.fillStyle = p.color;
-            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-            ctx.restore();
-        });
-        update();
-        }
-
-        function update() {
-        confetti.forEach(p => {
-            p.y += p.speed;
-            p.angle += 5;
-            if (p.y > canvas.height) {
-            p.y = -10;
-            p.x = Math.random() * canvas.width;
+        btn.addEventListener('click', () => {
+            surprise.classList.toggle('hidden');
+            if (!surprise.classList.contains('hidden')) {
+            music.currentTime = 30;
+            music.volume = 1.0;
+            music.play();
+            startCarousel();
+            iniciarContador(); // activa el contador persistente
+            } else {
+            music.pause();
+            music.currentTime = 0;
+            clearInterval(interval);
             }
         });
+
+        function startCarousel() {
+            interval = setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+            }, 3000);
         }
 
-        function animate() {
-        draw();
-        requestAnimationFrame(animate);
+        function launchConfetti() {
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const confetti = Array.from({ length: 100 }, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 8 + 4,
+            speed: Math.random() * 3 + 2,
+            color: `hsl(${Math.random() * 360}, 70%, 70%)`,
+            angle: Math.random() * 360
+            }));
+
+            function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            confetti.forEach(p => {
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.angle * Math.PI / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctx.restore();
+            });
+            update();
+            }
+
+            function update() {
+            confetti.forEach(p => {
+                p.y += p.speed;
+                p.angle += 5;
+                if (p.y > canvas.height) {
+                p.y = -10;
+                p.x = Math.random() * canvas.width;
+                }
+            });
+            }
+
+            function animate() {
+            draw();
+            requestAnimationFrame(animate);
+            }
+
+            if (!confettiRunning) {
+            confettiRunning = true;
+            animate();
+            }
         }
 
-        if (!confettiRunning) {
-        confettiRunning = true;
-        animate();
+        launchConfetti();
+
+        // Frases rotativas tipo mantras
+        const mantras = [
+            "Confía en tu luz 🌟",
+            "Tu historia apenas comienza 📖",
+            "Eres más fuerte de lo que crees 💪",
+            "Cada paso cuenta, incluso los pequeños 👣",
+            "Tu esencia es tu superpoder ✨"
+        ];
+        let mantraIndex = 0;
+
+        function rotateMantras() {
+            mantraBox.textContent = mantras[mantraIndex];
+            mantraIndex = (mantraIndex + 1) % mantras.length;
+        }
+        rotateMantras();
+        setInterval(rotateMantras, 5000);
+
+        // Contador persistente con localStorage
+        function iniciarContador() {
+            let momentoInicio = localStorage.getItem("momentoInicio");
+
+            if (!momentoInicio) {
+            momentoInicio = new Date().toISOString();
+            localStorage.setItem("momentoInicio", momentoInicio);
+            }
+
+            momentoInicio = new Date(momentoInicio);
+
+            function actualizarContador() {
+            const ahora = new Date();
+            const diff = ahora - momentoInicio;
+
+            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutos = Math.floor((diff / (1000 * 60)) % 60);
+            const segundos = Math.floor((diff / 1000) % 60);
+
+            const fechaInicio = momentoInicio.toLocaleString('es-VE', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+
+            contadorDias.innerHTML =
+            //<strong>⏳ Desde:</strong> ${fechaInicio}<br>
+                `<strong>🕒 Han pasado:</strong> ${dias} día${dias !== 1 ? 's' : ''}, ${horas}h ${minutos}m ${segundos}s 🎉`;
+            }
+
+            actualizarContador();
+            setInterval(actualizarContador, 1000);
         }
 
-        
-    }
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-        .then(() => console.log('Service Worker registrado'))
-        .catch(err => console.error('Error al registrar SW:', err));
-    }
+        // Botón emocional según la hora
+        function mostrarMensajeHora() {
+            const mensajes = [
+            "Aunque hoy te sientas triste, frustrada o sola... recuerda que tu luz no depende del clima emocional. Respira, descansa, y vuelve a ti. Eres valiosa, fuerte y mereces todo lo bueno. 🌈",
+            "No estás sola. Cada emoción que sientes es válida, y cada día es una oportunidad para sanar. Tu historia importa. 💖",
+            "Respira profundo. Lo que hoy pesa, mañana puede impulsarte. Eres más fuerte de lo que imaginas. 🌻",
+            "Cuando el mundo parezca apagado, recuerda que tú eres una chispa. Tu presencia transforma. ✨",
+            "Si hoy no puedes con todo, está bien. A veces solo basta con existir. Y tú ya eres suficiente. 🌙"
+            ];
+            const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
+            alert(mensaje);
+        }
 
-  launchConfetti(); // inicia al cargar la página
-</script>
-</body>
+        // Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(() => console.log('Service Worker registrado'))
+            .catch(err => console.error('Error al registrar SW:', err));
+        }
+        </script>
+    </body>
 </html>
