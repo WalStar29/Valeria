@@ -1,7 +1,7 @@
 {
     "name": "Cumpleaños Valeria",
     "short_name": "Valeria18",
-    "start_url": "index.html",
+    "start_url": "/Valeria/index.html",
     "display": "standalone",
     "background_color": "#ffe0ec",
     "theme_color": "#d63384",
